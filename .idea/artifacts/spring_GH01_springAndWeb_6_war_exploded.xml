@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="spring_GH01_springAndWeb_6:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/spring_GH01_springAndWeb_6_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="spring_GH01_springAndWeb_6/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="spring_GH01_springAndWeb_6" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

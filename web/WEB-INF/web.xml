@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--配置参数：  contextConfigLocation：指定加载路径-->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath:com/qcj/config/applicationContext.xml</param-value>
+    </context-param>
+
+    <!--
+        监听application域的初始化，加载spring容器，将ac对象放置在application域中管理
+        默认加载spring配置文件路径：/web-inf/applicationContext.xml
+        指定加载入境：contextConfigLocation
+    -->
+    <!--
+    ContextLoaderListener的作用就是启动Web容器时，自动装配ApplicationContext.xml的配置信息
+    。因为它实现了ServletContextListener这个接口，在web.xml配置这个监听器，启动容器时，就会默认执行它实现的方法。
+    启动的时候已经将需要用的对象放在了域中。
+
+    ApplicationContext.xml这个配置文件部一般默认放置在。
+    applicationContext的默认的路径是”/WEB-INF/applicationContext.xml。
+    也可以在web.xml中配置该文件的其他位置，
+    -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+</web-app>
